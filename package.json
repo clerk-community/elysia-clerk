@@ -12,13 +12,13 @@
     "session",
     "typescript"
   ],
-  "homepage": "https://github.com/wobsoriano/elysia-clerk#readme",
-  "bugs": "https://github.com/wobsoriano/elysia-clerk/issues",
+  "homepage": "https://github.com/clerk-community/elysia-clerk#readme",
+  "bugs": "https://github.com/clerk-community/elysia-clerk/issues",
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/elysia-clerk.git"
+    "url": "git+https://github.com/clerk-community/elysia-clerk.git"
   },
   "files": [
     "dist"
