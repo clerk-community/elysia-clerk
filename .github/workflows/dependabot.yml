@@ -19,7 +19,7 @@ jobs:
       - name: Update PR
         uses: StafflinePeoplePlus/dependabot-changesets@v0.1.5
         with:
-          owner: wobsoriano
+          owner: clerk-community
           repo: elysia-clerk
           pr-number: ${{ github.event.pull_request.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
