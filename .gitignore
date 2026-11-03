@@ -6,3 +6,4 @@ dist
 # AI
 .agents
 skills-lock.json
+.vitest/
