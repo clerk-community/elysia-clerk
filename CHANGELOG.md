@@ -1,5 +1,11 @@
 # elysia-clerk
 
+## 1.0.3
+
+### Patch Changes
+
+- 0b6d93e: Bump `@clerk/backend` to 3.26.5 and `@clerk/shared` to 4.43.1
+
 ## 1.0.2
 
 ### Patch Changes
@@ -29,25 +35,25 @@
   Example usage:
 
   ```ts
-  import { clerkPlugin } from 'elysia-clerk';
+  import { clerkPlugin } from "elysia-clerk";
 
   export const app = new Elysia()
     .onError(({ code, error }) => {
       console.error(code, error);
     })
     .use(clerkPlugin())
-    .get('/api/protected', ({ auth }) => {
-      const authObject = auth({ acceptsToken: 'any' });
+    .get("/api/protected", ({ auth }) => {
+      const authObject = auth({ acceptsToken: "any" });
 
       if (!authObject.isAuthenticated) {
         // do something for unauthenticated requests
       }
 
-      if (authObject.tokenType === 'session_token') {
-        console.log('this is session token from a user');
+      if (authObject.tokenType === "session_token") {
+        console.log("this is session token from a user");
       } else {
-        console.log('this is some other type of machine token');
-        console.log('more specifically, a ' + authObject.tokenType);
+        console.log("this is some other type of machine token");
+        console.log("more specifically, a " + authObject.tokenType);
       }
     })
     .listen(8080);
@@ -201,7 +207,7 @@
   new Elysia()
     .use(clerkPlugin())
     .get(
-      '/current-user',
+      "/current-user",
       ({ currentUser, error }) => {
         if (!currentUser) {
           return error(401);
@@ -211,7 +217,7 @@
       },
       {
         currentUser: true,
-      },
+      }
     )
     .listen(3000);
   ```
@@ -313,15 +319,15 @@
   Usage:
 
   ```ts
-  import { Elysia } from 'elysia';
-  import { clerkPlugin } from 'elysia-clerk';
+  import { Elysia } from "elysia";
+  import { clerkPlugin } from "elysia-clerk";
 
   new Elysia()
     .use(clerkPlugin())
-    .get('/api/me', async ({ clerk, auth, set }) => {
+    .get("/api/me", async ({ clerk, auth, set }) => {
       if (!auth?.userId) {
         set.status = 403;
-        return 'Unauthorized';
+        return "Unauthorized";
       }
 
       const user = await clerk.users.getUser(auth.userId);
